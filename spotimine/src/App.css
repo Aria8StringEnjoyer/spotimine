@@ -1,0 +1,353 @@
+@font-face {
+  font-family: "Delius";
+  src: url("/src/assets/Delius-Regular.ttf");
+}
+
+* {
+  font-size: clamp(0.8rem, 0.7vw, 1.5rem);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0px;
+  color: white;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 2.75vw;
+}
+
+.dropdownMenuContent a {
+  font-size: 2vw;
+}
+
+span {
+  color: gainsboro;
+  cursor: default;
+}
+
+b, i {
+  cursor: default;
+  font-size: clamp(0.4rem, 0.5vw, 1rem);
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  overflow: hidden;
+  background-color: #262529;
+  border-color: #262529;
+}
+
+#trackSection {
+  background-color: #212125;
+  position: absolute;
+  margin-left: 22.5dvw; 
+  height: 52.5dvh; 
+  width: 47.5dvw; 
+  overflow: scroll;
+  border: 2px solid #212125;
+  border-radius: 40px; 
+  padding: 1vw;
+}  
+
+search {
+  margin-right: 8dvw;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.audioDiv {
+  display: flex;
+}
+
+.audioDiv:hover {
+  background-color: #52565e;
+  /* background-color: #212125; */
+}
+
+#volumeDiv { 
+  height: 5dvh;
+  margin-top: calc(80dvh - 9.5dvw);
+  display: flex;
+  align-items: center; 
+  justify-content: end; 
+  background-color: #141416
+  }
+
+#input_search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="range"] {
+  width: clamp(48px, 4vw, 128px);
+  height: clamp(8px, 1dvh, 16px);
+  margin-left: -2.5%;
+  margin-right: 2.5%;
+  background: transparent;
+  appearance: none;
+  border-radius: 50px/100px;
+}
+
+/*vendor prefix hell ->*/
+
+input[type="range"]::-webkit-progress-bar {
+  height: clamp(4px, 0.1dvh, 6px);
+  background: white;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: clamp(8px, 0.625dvw, 32px);
+  height: clamp(10px, 0.7dvw, 32px);
+  margin-left: -2.5%;
+  margin-right: 2.5%;
+  background: gainsboro;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #576ba5;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #576ba5;
+}
+
+
+
+input[type="range"]::-moz-range-track {
+  height: clamp(6px, 0.4dvh, 12px);
+  background: #52565e;
+  border-radius: 100px;
+}
+
+input[type="range"]::-moz-range-progress {
+  height: clamp(4px, 0.4dvh, 6px);
+  border-radius: 100px;
+  background: white;   
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: clamp(8px, 0.625dvw, 32px);
+  height: clamp(10px, 0.7dvw, 32px);
+  margin-left: -2.5%;
+  margin-right: 2.5%;
+  background: gainsboro;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: #576ba5;
+}
+
+
+/*form elements ->*/
+#trackForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+input[type="text"] {
+  margin: 2.5%;
+  width: clamp(192px, 18dvw, 820px);
+  height: clamp(24px, 3.5dvh, 96px);
+  background-color: #52565e;
+  border: 1.5px solid #1b1b1d; 
+  border-radius: 20px;
+}
+
+input[type="text"]::placeholder {
+  color: white
+}
+
+.formInput {
+  border: 1px solid gainsboro;
+  width: clamp(192px, 35dvw, 1500px);
+  height: clamp(32px, 6dvh, 256px);
+  background-color: #576ba5;
+  padding: calc(1dvw - 1dvh);
+  margin: 3.5dvh;
+  border-radius: 20px;
+}
+
+#trackForm input[type="text"] {
+  margin: 1dvh;
+  width: clamp(192px, 35dvw, 1500px);
+  height: clamp(32px, 5dvh, 192px);
+  background-color: #52565e;
+  border: 1.5px solid #1b1b1d; 
+}
+
+input[type="file"] {
+  background-color: #52565e;
+}
+
+input[type="file"]::file-selector-button {
+  border: 1px solid gainsboro;
+  background-color: #576ba5;
+
+}
+
+#submitButton:disabled {
+  color: #52565e;
+  background-color: #262529;
+}
+
+/*misc*/
+
+.albumCover { 
+  width: 48px;
+  height: 48px;
+  padding: 1dvw;
+} 
+
+
+footer {
+  background-color: #141416;
+  display: flex; 
+  flex-direction: row;
+  justify-content: center; 
+  /* height: 100dvh; */
+  padding-bottom: 100dvh;
+}
+
+@media screen and (max-width: 1000px) {
+  #volumeInput {
+    display: none;
+  }
+
+  
+  .albumCover { 
+    width: 32px;
+    height: 32px;
+    margin-top: 1dvh;
+    padding: 0.75dvw;
+  } 
+} 
+ 
+@media screen and (max-width: 540px) {
+  .albumCover { 
+    width: 24px;
+    height: 24px;
+    padding: 0.5dvh;
+  } 
+
+  .songName, .artistName {
+    font-size: 0.4rem;
+    margin-right: -20dvw;
+  }
+
+} 
+
+.dropdownMenuContent {
+  border-radius: 40px / 60px;
+  padding: 3dvw;
+  position: absolute;
+  box-shadow: 3px 3px 8px #262529;
+  display: none;
+  width: 12.5dvw;
+  height: 30dvh;
+  background-color: #52565e;
+}
+
+.dropdownMenu {
+  margin-left: 2.5dvw;
+  display: inline;
+}
+
+.dropdownMenu:hover .dropdownMenuContent{
+  opacity: 0.9;
+  display: block;
+}
+
+.dropdownMenuButton:hover {
+  transition: all 400ms;
+  background-color: #52565e;
+  border: 10px solid #52565e;
+}
+
+.dropdownMenuButton {
+  background: no-repeat center/50% transparent url("assets/MenuRound.png");
+  margin-top: 2dvh;
+  border: 10px solid #262529;
+  border-radius: 50px 50px 0px 0px / 50px;
+  padding: 1.5%;
+  width: clamp(64px, 5vw, 128px);
+  height: 64px;
+}
+
+#volumeInput {
+  width: clamp(60px, 8dvw, 300px);
+  margin-top: 1.5px;
+}
+
+.audioSpan {
+  position: absolute;
+  margin-left: 2dvw;
+  padding: 0.3dvw;
+  margin-top: calc(1.8dvh + 0.25dvw);    
+}
+
+.playButton {
+  margin-top: 0.75dvh;
+  border: inherit;
+  padding: 1.5dvw;
+  width: clamp(64px, 5vw, 128px);
+  height: 48px;
+}
+
+.muteButton {
+  border: inherit;  
+  margin-right: 1dvw;
+  padding: 1.5dvw;
+  width: clamp(64px, 5dvw, 128px);
+  height: 48px;
+}
+
+.playButton[data-paused=true] {
+  background: transparent no-repeat center/25% url(/src/assets/Play.png);
+} 
+
+.playButton[data-paused=false] {
+  background: transparent no-repeat center/25% url(/src/assets/Pause.png);
+} 
+
+#bigPlayButton {
+  position: absolute;
+  margin-top: calc(-4dvh - 0.65dvw);
+  margin-right: 4.5dvw;
+  border: inherit;
+  padding: 1.5%;
+  width: clamp(64px, 5dvw, 160px);
+  height: 48px;
+}
+
+#bigPlayButton[data-paused=true] {
+  background: transparent no-repeat center/35% url(/src/assets/BigPlay.png);
+} 
+
+#bigPlayButton[data-paused=false] {
+  background: transparent no-repeat center/35% url(/src/assets/BigPause.png);
+} 
+
+.muteButton[data-muted=true] {
+  background: transparent no-repeat center url(/src/assets/Unmute.png);
+} 
+
+.muteButton[data-muted=false] {
+  background: transparent no-repeat center url(/src/assets/Mute.png);
+} 
+
+.audioDiv:not(:hover) .playButton {
+  background: none;
+}
+
+.audioDiv:hover .audioSpan {
+  display: none;
+}

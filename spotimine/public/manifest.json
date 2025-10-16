@@ -1,0 +1,10 @@
+{
+    "name": "Spotimine",
+    "short_name": "Spotimine",
+    "start_url": "/",
+    "icons": [],
+    "theme_color": "#0f0f0f",
+    "background_color": "FFFFFF",
+    "display": "fullscreen",
+    "orientation": "portrait"
+}
