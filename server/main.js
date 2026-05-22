@@ -2,26 +2,6 @@ const fs = require("fs");
 const config = require("./config.json");
 
 const {GoogleAuth} = require('google-auth-library');
-// const APIKey = `AIzaSyDRSAKlkkvQOf0_Ilb7hI-_LFz_zFZejmI`;
-// const auth = new GoogleAuth({
-//   scopes: 'https://www.googleapis.com/auth/drive',
-//   apiKey: APIKey,
-// });
-
-// async function downloadFile(url) {
-//   try {
-//     const service = google.drive({version: 'v3', auth});
-//     const fileId = url.match(/\/d\/(.*?)\/view/)?.[1];
-//     const file = await service.files.get({
-//       fileId,
-//       alt: 'media',
-//     });
-//     return file;
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
-
 
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const express = require("express");
@@ -81,13 +61,9 @@ app.get("/track", async (req, res) => {
       res.send(results)
       return
     }
-    const results = await songs.find({ song_name: { $regex: `^${req.query.text[0]}`, $options: `i` } }).toArray();
 
-    // const promiseArr = queryResults.map( (el, id) => {
-    //   return downloadFile(el.song_link);
-    // });
-    // const results = await Promise.all(promiseArr);
-    // console.log(results[0].response.data)
+    //TODO: make the search work like spotify
+    const results = await songs.find({ song_name: { $regex: `^${req.query.text[0]}`, $options: `i` } }).toArray();
     res.send(results)
   } catch (err) {
     console.log(err)

@@ -1,6 +1,5 @@
 import { DropdownMenu } from './Components/DropdownMenu';
 import { useState } from "react"
-import pako from "pako"
 
 
 export default function AddTracks() {
@@ -16,8 +15,8 @@ export default function AddTracks() {
     let isDisabled
 
     function isButtonDisabled() {
-        // return (fromAlbum && songName && artist && audioFile) ? false : true
-        return false
+        return (fromAlbum && songName && artist && audioFile) ? false : true
+        //Fix the bug that causes the button to be disabled
     }
 
     async function addTrack() {
@@ -50,11 +49,6 @@ export default function AddTracks() {
         } catch(err) {
             console.log(err)
         }
-      
-        // reqBody.song_path = zip;
-
-        // let blobURL; 
-        // blobURL = URL.createObjectURL(blob)
 
         return;
     }

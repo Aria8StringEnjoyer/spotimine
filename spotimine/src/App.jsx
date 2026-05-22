@@ -10,12 +10,12 @@ export default function App() {
   let searchTimer
   let trackName;
   let [currentSong, setCurrentSong] = useState(null);
-  const volumeBar = useRef(0.125)
-  const durationBar = useRef(0);
+  const loudnessBar = useRef(0.125)
+  const timeBar = useRef(0);
   const songDuration = useRef(0); 
 
   //precautions if stolen so stored in client for simplicity's sake
-  const APIKey = `AIzaSyCsTjQ6MBfDoih7QW-9guBZRrac3_jD4tY`;
+  const APIKey = `AIzaSyCsTjQ6MBfDoih7QM-9guBZRrac3_jD4tY`;
   let isMuted = false;
   let previousVolume = null;
   function setDuration(e) {
@@ -76,7 +76,7 @@ export default function App() {
     }, 750)
   }
 
-  function Track({ el, id, sound, imageId }) {
+  function Track({ el, id, sound, imageId }) { //Optimize this function and make it faster
     return (
       <>
         <li

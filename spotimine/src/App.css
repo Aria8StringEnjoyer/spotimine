@@ -95,7 +95,7 @@ input[type="range"] {
   border-radius: 50px/100px;
 }
 
-/*vendor prefix hell ->*/
+
 
 input[type="range"]::-webkit-progress-bar {
   height: clamp(4px, 0.1dvh, 6px);
@@ -216,6 +216,8 @@ footer {
   /* height: 100dvh; */
   padding-bottom: 100dvh;
 }
+
+/*TODO: Fix the adaptive css */
 
 @media screen and (max-width: 1000px) {
   #volumeInput {
