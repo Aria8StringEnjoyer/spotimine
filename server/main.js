@@ -44,7 +44,7 @@ app.post("/track", async (req, res) => {
   try {
     let { song_name, from_album, song_path, artist, date_created, song_link, image_link} = req.body
     if (!date_created) {
-        date_created = "2001-09-11"
+        date_created = Date.now();
     }
     const result = await songs.insertOne(req.body)
     res.send(result)
